@@ -77,7 +77,7 @@
             this.surnameBox.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.surnameBox.Location = new System.Drawing.Point(307, 158);
             this.surnameBox.Name = "surnameBox";
-            this.surnameBox.Size = new System.Drawing.Size(212, 39);
+            this.surnameBox.Size = new System.Drawing.Size(219, 39);
             this.surnameBox.TabIndex = 13;
             this.surnameBox.Text = "Введите фамилию";
             this.surnameBox.Enter += new System.EventHandler(this.surnameBox_Enter);
@@ -118,7 +118,6 @@
             this.login_in_reg_Field.Size = new System.Drawing.Size(453, 66);
             this.login_in_reg_Field.TabIndex = 9;
             this.login_in_reg_Field.Text = "Введите логин";
-          
             this.login_in_reg_Field.Enter += new System.EventHandler(this.login_in_reg_Field_Enter);
             this.login_in_reg_Field.Leave += new System.EventHandler(this.login_in_reg_Field_Leave);
             // 
