@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.employmentComboBox1 = new System.Windows.Forms.ComboBox();
             this.surnameBox = new System.Windows.Forms.TextBox();
@@ -38,9 +39,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +96,7 @@
             this.nameBox.Text = "Введите имя";
             this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
             this.nameBox.Leave += new System.EventHandler(this.nameBox_Leave);
+            this.nameBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameBox_Validated);
             // 
             // regButton
             // 
@@ -164,6 +168,10 @@
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,5 +202,6 @@
         private System.Windows.Forms.TextBox surnameBox;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.ComboBox employmentComboBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

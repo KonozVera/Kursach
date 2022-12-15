@@ -13,6 +13,7 @@ namespace Kursach
 {
     public partial class Registration : Form
     {
+
         public Registration()
         {
             InitializeComponent();
@@ -68,6 +69,17 @@ namespace Kursach
             if (surnameBox.Text == String.Empty)
             {
                 surnameBox.Text = "Введите фамилию";
+            }
+        }
+
+        private void nameBox_Validated(object sender, CancelEventArgs e)
+        {
+            string errorMsg;
+            if (!Error_Debugger.CheckString(nameBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                nameBox.Select(0, nameBox.Text.Length);
+                this.errorProvider1.SetError(nameBox, errorMsg);
             }
         }
     }
