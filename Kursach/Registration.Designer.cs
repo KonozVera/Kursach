@@ -40,10 +40,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,6 +87,8 @@
             this.surnameBox.Text = "Введите фамилию";
             this.surnameBox.Enter += new System.EventHandler(this.surnameBox_Enter);
             this.surnameBox.Leave += new System.EventHandler(this.surnameBox_Leave);
+            this.surnameBox.Validating += new System.ComponentModel.CancelEventHandler(this.surnameBox_Validating);
+            this.surnameBox.Validated += new System.EventHandler(this.surnameBox_Validated);
             // 
             // nameBox
             // 
@@ -96,7 +100,8 @@
             this.nameBox.Text = "Введите имя";
             this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
             this.nameBox.Leave += new System.EventHandler(this.nameBox_Leave);
-            this.nameBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameBox_Validated);
+            this.nameBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameBox_Validating);
+            this.nameBox.Validated += new System.EventHandler(this.nameBox_Validated);
             // 
             // regButton
             // 
@@ -124,6 +129,8 @@
             this.login_in_reg_Field.Text = "Введите логин";
             this.login_in_reg_Field.Enter += new System.EventHandler(this.login_in_reg_Field_Enter);
             this.login_in_reg_Field.Leave += new System.EventHandler(this.login_in_reg_Field_Leave);
+            this.login_in_reg_Field.Validating += new System.ComponentModel.CancelEventHandler(this.login_in_reg_Field_Validating);
+            this.login_in_reg_Field.Validated += new System.EventHandler(this.login_in_reg_Field_Validated);
             // 
             // pictureBox1
             // 
@@ -172,12 +179,19 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Registration";
             this.Text = "Registration";
             this.panel1.ResumeLayout(false);
@@ -186,6 +200,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +218,6 @@
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.ComboBox employmentComboBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }

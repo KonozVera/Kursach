@@ -169,6 +169,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.fonPanel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuForm";
             this.Text = "MenuForm";
             this.fonPanel.ResumeLayout(false);

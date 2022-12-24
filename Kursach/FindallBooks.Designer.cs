@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindallBooks));
             this.additionalLabel = new System.Windows.Forms.Label();
             this.outButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -36,8 +38,10 @@
             this.add_bookButton = new System.Windows.Forms.Button();
             this.login_in_find_Field = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // additionalLabel
@@ -56,7 +60,7 @@
             this.outButton.FlatAppearance.BorderSize = 0;
             this.outButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.outButton.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.outButton.Location = new System.Drawing.Point(602, 12);
+            this.outButton.Location = new System.Drawing.Point(736, 44);
             this.outButton.Name = "outButton";
             this.outButton.Size = new System.Drawing.Size(186, 50);
             this.outButton.TabIndex = 16;
@@ -77,14 +81,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(1071, 450);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(13, 123);
+            this.label1.Location = new System.Drawing.Point(12, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 22);
             this.label1.TabIndex = 22;
@@ -93,14 +97,11 @@
             // all_bookcheckedListBox
             // 
             this.all_bookcheckedListBox.FormattingEnabled = true;
-            this.all_bookcheckedListBox.Items.AddRange(new object[] {
-            "\"Ала\" А. А. Ало 1997"});
-            this.all_bookcheckedListBox.Location = new System.Drawing.Point(12, 153);
+            this.all_bookcheckedListBox.Location = new System.Drawing.Point(16, 145);
             this.all_bookcheckedListBox.Name = "all_bookcheckedListBox";
-            this.all_bookcheckedListBox.Size = new System.Drawing.Size(299, 89);
+            this.all_bookcheckedListBox.Size = new System.Drawing.Size(1017, 140);
             this.all_bookcheckedListBox.TabIndex = 21;
             this.all_bookcheckedListBox.Tag = "";
-      
             // 
             // add_bookButton
             // 
@@ -108,7 +109,7 @@
             this.add_bookButton.FlatAppearance.BorderSize = 0;
             this.add_bookButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_bookButton.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add_bookButton.Location = new System.Drawing.Point(410, 12);
+            this.add_bookButton.Location = new System.Drawing.Point(544, 44);
             this.add_bookButton.Name = "add_bookButton";
             this.add_bookButton.Size = new System.Drawing.Size(186, 50);
             this.add_bookButton.TabIndex = 20;
@@ -119,35 +120,44 @@
             // login_in_find_Field
             // 
             this.login_in_find_Field.Font = new System.Drawing.Font("Palatino Linotype", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login_in_find_Field.Location = new System.Drawing.Point(121, 12);
+            this.login_in_find_Field.Location = new System.Drawing.Point(255, 44);
             this.login_in_find_Field.Name = "login_in_find_Field";
             this.login_in_find_Field.Size = new System.Drawing.Size(257, 44);
             this.login_in_find_Field.TabIndex = 19;
-            this.login_in_find_Field.Text = "Введите логин";
             this.login_in_find_Field.Enter += new System.EventHandler(this.login_in_find_Field_Enter);
             this.login_in_find_Field.Leave += new System.EventHandler(this.login_in_find_Field_Leave);
+            this.login_in_find_Field.Validating += new System.ComponentModel.CancelEventHandler(this.login_in_find_Field_Validating);
+            this.login_in_find_Field.Validated += new System.EventHandler(this.login_in_find_Field_Validated);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Kursach.Properties.Resources.login;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 12);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(171, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FindallBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1071, 450);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FindallBooks";
             this.Text = "FindallBooks";
+            this.Load += new System.EventHandler(this.FindallBooks_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,5 +171,6 @@
         private System.Windows.Forms.TextBox login_in_find_Field;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

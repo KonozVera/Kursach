@@ -26,9 +26,9 @@ namespace Kursach
             menu.Close();
         }
 
-        private void send_newsletterButton_Click(object sender, EventArgs e)
+        private void ListofdebtorsForm_Load(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            Recordings.ReferenceEquals(this, (ListofdebtorsForm)sender);
         }
-    }
+    } 
 }

@@ -19,6 +19,16 @@ namespace Kursach
 
         private void deletebookButton_Click(object sender, EventArgs e)
         {
+            int Key = Convert.ToInt32(index_textBox.Text);
+            //List<Books> list;
+            //Dictionary<int, Clients> dict;
+            //var tuple = Serialization.Deserialize();
+            //list = tuple.Item2;
+            //dict = tuple.Item1;
+            //(dict, list) = Serialization.Deserialize();
+            Library.Delete_Book(Key);
+            //Serialization.Serialisation(dict, list);
+            MessageBox.Show("Книгу успешно удалили!");
             this.DialogResult = DialogResult.OK;
         }
 
@@ -46,5 +56,22 @@ namespace Kursach
                 index_textBox.Text = "Введите индекс книги";
             }
         }
+
+        private void index_textBox_Validating(object sender, CancelEventArgs e)
+        {
+            string errorMsg = "";
+            if (!Error_Debugger.CheckYear(index_textBox.Text, out errorMsg))
+            {
+                e.Cancel = true;
+                index_textBox.Select(0, index_textBox.Text.Length);
+                this.errorProvider1.SetError(index_textBox, errorMsg);
+            }
+        }
+
+        private void index_textBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(index_textBox, "");
+        }
+
     }
 }
